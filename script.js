@@ -24,7 +24,6 @@ const projects = [
   {
     title: "BOMBAY",
     videos: [
-      "m_atDrtHwcE",
       "Tk2XFzuVNRE",
       "f9HofTGH_W0",
       "q1TqsS6Rhtc",
@@ -42,7 +41,6 @@ const projects = [
     title: "MAHARASHTRA",
     videos: [
       "NgnZqIQlpoY",
-      "xvUVJZOYmfo",
       "aiLOvI55sSE",
       "xgf6rOnj9l4",
       "h7lPgXdcKGg",
@@ -398,7 +396,7 @@ document.addEventListener("DOMContentLoaded", function () {
         : letter;
 
     span.style.animationDelay =
-      (index * 0.06) + "s";
+      (index * 0.06) + "s"; 
 
     name.appendChild(span);
 
