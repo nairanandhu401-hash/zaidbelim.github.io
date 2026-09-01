@@ -3,7 +3,9 @@ const projects = [
   {
     title: "ZEDITS",
     videos: [
-       "0sMisbzZ5Uc"
+      "iTeCnFXpw8U",
+      "q6D-1ZCeyDU",
+      "LjWJYKV2WhE"
     ],
     image: "",
     link: ""
@@ -12,8 +14,8 @@ const projects = [
   {
     title: "INDIANINLAST24HRS / BHARAT",
     videos: [
-      "indianlast1.mp4",
-      "indianlast2.mp4"
+      "nwnRtk4kk4s",
+      "Kzn7ZyElovs"
     ],
     image: "",
     link: ""
@@ -22,15 +24,15 @@ const projects = [
   {
     title: "BOMBAY",
     videos: [
-      "bombay1.mp4",
-      "bombay2.mp4",
-      "bombay3.mp4",
-      "bombay4.mp4",
-      "bombay5.mp4",
-      "bombay6.mp4",
-      "bombay7.mp4",
-      "bombay8.mp4",
-      "bombay9.mp4"
+      "m_atDrtHwcE",
+      "Tk2XFzuVNRE",
+      "f9HofTGH_W0",
+      "q1TqsS6Rhtc",
+      "DbBlZeBlm2Q",
+      "aU92CGQ2OeE",
+      "gdFsk5Pt0zU",
+      "rQhFAnaW5xU",
+      "SwpW4p8_mKg"
     ],
     image: "",
     link: ""
@@ -39,13 +41,13 @@ const projects = [
   {
     title: "MAHARASHTRA",
     videos: [
-      "maharastra1.mp4",
-      "maharastra2.mp4",
-      "maharastra3.mp4",
-      "maharastra4.mp4",
-      "maharastra5.mp4",
-      "maharastra6.mp4",
-      "maharastra7.mp4"
+      "NgnZqIQlpoY",
+      "xvUVJZOYmfo",
+      "aiLOvI55sSE",
+      "xgf6rOnj9l4",
+      "h7lPgXdcKGg",
+      "zlV_af7npgs",
+      "lUbC-RBFueE"
     ],
     image: "",
     link: ""
@@ -54,9 +56,9 @@ const projects = [
   {
     title: "MEWAR",
     videos: [
-      "mewar1.mp4",
-      "mewar2.mp4",
-      "mewar3.mp4"
+      "nxL-PIUoUhg",
+      "aD45vyBHzsE",
+      "RS3EEXQLx-k"
     ],
     image: "",
     link: ""
@@ -65,7 +67,7 @@ const projects = [
   {
     title: "BOLLYWOOD",
     videos: [
-      "bollywood1.mp4",
+      "s4lzi3WlC5A",
       "bollywood2.mp4",
       "bollywood3.mp4",
       "bollywood4.mp4",
