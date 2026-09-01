@@ -170,10 +170,11 @@ function loadYouTubeVideo(videoId) {
 
 function closeProject() {
 
-  const video = document.getElementById("modalVideo");
+  const video =
+    document.getElementById("modalVideo");
 
   if (video) {
-    video.pause();
+    video.src = "";
   }
 
   document
