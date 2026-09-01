@@ -2,31 +2,26 @@ const projects = [
 
   {
     title: "ZEDITS",
-
     videos: [
-      "0sMisbzZ5Uc"
+       "0sMisbzZ5Uc"
     ],
-
     image: "",
     link: ""
   },
 
   {
     title: "INDIANINLAST24HRS / BHARAT",
-
-     videos: [
+    videos: [
       "indianlast1.mp4",
       "indianlast2.mp4"
-     ],
-
+    ],
     image: "",
     link: ""
   },
 
   {
     title: "BOMBAY",
- 
-     videos: [
+    videos: [
       "bombay1.mp4",
       "bombay2.mp4",
       "bombay3.mp4",
@@ -36,16 +31,14 @@ const projects = [
       "bombay7.mp4",
       "bombay8.mp4",
       "bombay9.mp4"
-      ],
-
+    ],
     image: "",
     link: ""
   },
 
   {
     title: "MAHARASHTRA",
-
-     videos: [
+    videos: [
       "maharastra1.mp4",
       "maharastra2.mp4",
       "maharastra3.mp4",
@@ -53,36 +46,31 @@ const projects = [
       "maharastra5.mp4",
       "maharastra6.mp4",
       "maharastra7.mp4"
-      ],
-
+    ],
     image: "",
     link: ""
   },
 
   {
     title: "MEWAR",
-
-     videos: [
+    videos: [
       "mewar1.mp4",
       "mewar2.mp4",
       "mewar3.mp4"
-      ],
-    
+    ],
     image: "",
     link: ""
   },
 
   {
     title: "BOLLYWOOD",
-
-     videos: [
+    videos: [
       "bollywood1.mp4",
       "bollywood2.mp4",
       "bollywood3.mp4",
       "bollywood4.mp4",
       "bollywood5.mp4"
-      ],
-
+    ],
     image: "",
     link: ""
   }
@@ -101,6 +89,7 @@ let currentVideo = 0;
 function openProject(index) {
 
   currentProject = index;
+  currentVideo = 0;
 
   const project = projects[index];
 
@@ -109,23 +98,17 @@ function openProject(index) {
 
   if (project.videos && project.videos.length > 0) {
 
-    currentVideo = 0;
-
     image.style.display = "none";
     video.style.display = "block";
 
-    video.src = project.videos[currentVideo];
-    video.load();
+    loadYouTubeVideo(project.videos[currentVideo]);
 
   } else {
 
-    video.pause();
-    video.removeAttribute("src");
-    video.load();
-
     video.style.display = "none";
-    image.style.display = "block";
+    video.src = "";
 
+    image.style.display = "block";
     image.src = project.image || "";
   }
 
@@ -133,10 +116,8 @@ function openProject(index) {
   document.getElementById("modalTitle").textContent =
     project.title;
 
-
   document.getElementById("modalFile").textContent =
     String(index + 1).padStart(3, "0");
-
 
   document.getElementById("modalIndex").textContent =
     `${String(index + 1).padStart(3, "0")} / ${String(projects.length).padStart(3, "0")}`;
@@ -146,9 +127,9 @@ function openProject(index) {
     .getElementById("projectModal")
     .classList.add("show");
 
-
   document.body.style.overflow = "hidden";
 }
+
 
 /* ===============================
    LOAD YOUTUBE VIDEO
@@ -161,8 +142,8 @@ function loadYouTubeVideo(videoId) {
 
   video.src =
     `https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1`;
-
 }
+
 
 /* ===============================
    CLOSE PROJECT
@@ -184,14 +165,21 @@ function closeProject() {
   document.body.style.overflow = "";
 }
 
+
+/* ===============================
+   BARREL ANIMATION
+================================ */
+
 function playBarrelAnimation(direction) {
 
   const video =
     document.getElementById("modalVideo");
 
-  video.classList.remove("barrel-next", "barrel-prev");
+  video.classList.remove(
+    "barrel-next",
+    "barrel-prev"
+  );
 
-  // Animation ko restart karna
   void video.offsetWidth;
 
   if (direction === "next") {
@@ -201,6 +189,7 @@ function playBarrelAnimation(direction) {
   }
 }
 
+
 /* ===============================
    NEXT VIDEO
 ================================ */
@@ -209,20 +198,22 @@ function nextVideo() {
 
   const project = projects[currentProject];
 
-  if (!project.videos) return;
+  if (!project.videos ||
+      project.videos.length === 0) {
+    return;
+  }
 
   currentVideo =
-    (currentVideo + 1) % project.videos.length;
+    (currentVideo + 1) %
+    project.videos.length;
 
-  const video =
-    document.getElementById("modalVideo");
-
-  video.src = project.videos[currentVideo];
-
-  video.load();
+  loadYouTubeVideo(
+    project.videos[currentVideo]
+  );
 
   playBarrelAnimation("next");
 }
+
 
 /* ===============================
    PREVIOUS VIDEO
@@ -232,47 +223,39 @@ function previousVideo() {
 
   const project = projects[currentProject];
 
-  if (!project.videos) return;
+  if (!project.videos ||
+      project.videos.length === 0) {
+    return;
+  }
 
   currentVideo =
-    (currentVideo - 1 + project.videos.length) %
+    (currentVideo - 1 +
+      project.videos.length) %
     project.videos.length;
 
-  const video =
-    document.getElementById("modalVideo");
-
-  video.src = project.videos[currentVideo];
-
-  video.load();
+  loadYouTubeVideo(
+    project.videos[currentVideo]
+  );
 
   playBarrelAnimation("prev");
 }
 
+
 /* ===============================
-   NEXT BUTTON
+   NEXT PROJECT
 ================================ */
 
 function nextProject() {
 
   const project = projects[currentProject];
 
-  /*
-    If we're inside ZEDITS,
-    right arrow changes video.
-  */
-
-  if (project.videos && project.videos.length > 0) {
-
+  if (
+    project.videos &&
+    project.videos.length > 0
+  ) {
     nextVideo();
-
     return;
   }
-
-
-  /*
-    For other projects,
-    right arrow changes project.
-  */
 
   currentProject =
     (currentProject + 1) % projects.length;
@@ -282,30 +265,20 @@ function nextProject() {
 
 
 /* ===============================
-   PREVIOUS BUTTON
+   PREVIOUS PROJECT
 ================================ */
 
 function previousProject() {
 
   const project = projects[currentProject];
 
-  /*
-    If we're inside ZEDITS,
-    left arrow changes video.
-  */
-
-  if (project.videos && project.videos.length > 0) {
-
+  if (
+    project.videos &&
+    project.videos.length > 0
+  ) {
     previousVideo();
-
     return;
   }
-
-
-  /*
-    For other projects,
-    left arrow changes project.
-  */
 
   currentProject =
     (currentProject - 1 + projects.length) %
@@ -327,7 +300,7 @@ function toggleExperience(card) {
 
 
 /* ===============================
-   PROJECT MODAL BACKGROUND CLICK
+   PROJECT MODAL BACKGROUND
 ================================ */
 
 document
@@ -335,9 +308,7 @@ document
   .addEventListener("click", function(event) {
 
     if (event.target === this) {
-
       closeProject();
-
     }
 
   });
@@ -352,30 +323,20 @@ document.addEventListener("keydown", function(event) {
   const modal =
     document.getElementById("projectModal");
 
-
   if (!modal.classList.contains("show")) {
     return;
   }
 
-
   if (event.key === "Escape") {
-
     closeProject();
-
   }
-
 
   if (event.key === "ArrowRight") {
-
     nextProject();
-
   }
 
-
   if (event.key === "ArrowLeft") {
-
     previousProject();
-
   }
 
 });
@@ -392,7 +353,6 @@ function openProfile() {
     .classList.add("show");
 
   document.body.style.overflow = "hidden";
-
 }
 
 
@@ -403,7 +363,6 @@ function closeProfile() {
     .classList.remove("show");
 
   document.body.style.overflow = "";
-
 }
 
 
@@ -422,7 +381,6 @@ document.addEventListener("DOMContentLoaded", function () {
     name.textContent;
 
   name.innerHTML = "";
-
 
   [...text].forEach(function(letter, index) {
 
