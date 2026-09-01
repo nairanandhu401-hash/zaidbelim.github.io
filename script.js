@@ -4,9 +4,7 @@ const projects = [
     title: "ZEDITS",
 
     videos: [
-      "zedits1.mp4",
-      "zedits2.mp4",
-      "zedits3.mp4"
+      "0sMisbzZ5Uc"
     ],
 
     image: "",
@@ -152,6 +150,19 @@ function openProject(index) {
   document.body.style.overflow = "hidden";
 }
 
+/* ===============================
+   LOAD YOUTUBE VIDEO
+================================ */
+
+function loadYouTubeVideo(videoId) {
+
+  const video =
+    document.getElementById("modalVideo");
+
+  video.src =
+    `https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1`;
+
+}
 
 /* ===============================
    CLOSE PROJECT
