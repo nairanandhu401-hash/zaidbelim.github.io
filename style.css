@@ -1152,3 +1152,33 @@ footer {
       scale(1);
   }
 }
+
+/* =================================
+   EXPERIENCE TYPEWRITER ANIMATION
+================================= */
+
+.experience-detail {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  border-top: 1px solid rgba(0,0,0,.15);
+  margin-top: 0;
+  padding-top: 0;
+
+  font-family: "Dancing Script", cursive;
+  font-size: 24px;
+  line-height: 1.5;
+
+  transition:
+    max-height .45s ease,
+    opacity .3s ease,
+    margin .45s ease,
+    padding .45s ease;
+}
+
+.experience-card.open .experience-detail {
+  max-height: 180px;
+  opacity: 1;
+  margin-top: 25px;
+  padding-top: 18px;
+}
