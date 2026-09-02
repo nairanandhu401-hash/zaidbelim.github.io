@@ -1,476 +1,1190 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+* {
+  box-sizing: border-box;
+}
 
-  <title>ZAID BELIM — Creative Portfolio</title>
+html {
+  scroll-behavior: smooth;
+}
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+body {
+  margin: 0;
+  background: #f5f1e9;
+  color: #171717;
+  font-family: Inter, Arial, sans-serif;
+}
 
-  <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700;800&family=Dancing+Script:wght@600&family=DM+Mono:wght@400;500&family=Inter:wght@400;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-  <link rel="stylesheet" href="style.css">
-</head>
 
-<body>
+/* NAVIGATION */
 
-<header>
-  <div class="nav">
+header {
+  padding: 20px 4vw;
+}
 
-    <a href="#top" class="brand">
-      <strong>MOHAMMED ZAID BELIM</strong>
-      <span>Video Editor / VFX Artist</span>
-    </a>
+.nav {
+  max-width: 1280px;
+  margin: auto;
 
-    <nav>
-      <a href="#work">Work</a>
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#contact">Contact</a>
-    </nav>
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
 
-    <a href="#contact" class="talk">
-      Let's talk ↗
-    </a>
+.brand {
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+}
 
-  </div>
-</header>
+.brand strong {
+  font-size: 14px;
+}
 
+.brand span {
+  font-size: 11px;
+  color: #777;
+  margin-top: 3px;
+}
 
-<main>
+nav {
+  display: flex;
+  gap: 32px;
 
-<!-- HERO -->
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
 
-<section class="hero" id="top">
+nav a:first-child {
+  border-bottom: 1px solid #171717;
+  padding-bottom: 5px;
+}
 
-  <div class="location">
-    ⌖ Mumbai, India
-  </div>
+.talk {
+  border: 1px solid #171717;
+  padding: 13px 17px;
 
-  <h1>ZAID BELIM</h1>
+  font-size: 11px;
+  font-weight: 700;
 
-  <div class="intro">
+  text-transform: uppercase;
+  transition: .2s;
+}
 
-    <div>
-      CGI  / VFX / EDITING
-    </div>
+.talk:hover {
+  background: #ff27b7;
+}
 
-    <p>
-      Video Editor and VFX Artist creating cinematic visuals, <br> motion graphics, visual effects and 3D design .
-    </p>
 
-  </div>
+/* HERO */
 
-</section>
+.hero {
+  max-width: 1280px;
+  margin: auto;
+  padding: 10px 4vw 90px;
+}
 
+.location {
+  text-align: right;
 
-<!-- WORK -->
+  color: #777;
 
-<section class="work" id="work">
+  font-size: 11px;
+  text-transform: uppercase;
+}
 
-  <div class="section-head">
-    <strong>My Projects / Selected Work</strong>
-    <span>Hover to preview / Click to open archive</span>
-  </div>
+.hero h1 {
+  margin: 65px 0 75px;
 
+  font-family: Almarai, sans-serif;
+  font-size: clamp(60px, 12vw, 180px);
 
-<div class="projects">
+  line-height: .76;
+  letter-spacing: -6px;
 
-  <article class="project project-one" onclick="openProject(0)">
-    <span class="number">001</span>
-    <div>
-      <h2>ZEDITS</h2>
-      <p>Creative Work</p>
-    </div>
-  </article>
+  font-weight: 800;
+  text-transform: uppercase;
 
-  <article class="project project-two" onclick="openProject(1)">
-    <span class="number">002</span>
-    <div>
-      <h2>INDIANINLAST24HRS / BHARAT</h2>
-      <p>Creative Work</p>
-    </div>
-  </article>
+  overflow-wrap: anywhere;
+}
 
-  <article class="project project-three" onclick="openProject(2)">
-    <span class="number">003</span>
-    <div>
-      <h2>BOMBAY</h2>
-      <p>Creative Work</p>
-    </div>
-  </article>
+.intro {
+  display: grid;
+  grid-template-columns: 1fr 480px;
+  gap: 20px;
 
-  <article class="project project-one" onclick="openProject(3)">
-    <span class="number">004</span>
-    <div>
-      <h2>MAHARASHTRA</h2>
-      <p>Creative Work</p>
-    </div>
-  </article>
+  border-top: 1px solid #bbb;
+  padding-top: 15px;
 
-  <article class="project project-two" onclick="openProject(4)">
-    <span class="number">005</span>
-    <div>
-      <h2>MEWAR</h2>
-      <p>Creative Work</p>
-    </div>
-  </article>
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
 
-  <article class="project project-three" onclick="openProject(5)">
-    <span class="number">006</span>
-    <div>
-      <h2>BOLLYWOOD</h2>
-      <p>Creative Work</p>
-    </div>
-  </article>
+.intro p {
+  margin: 0;
 
-</div>
+  color: #777;
 
-</section>
+  font-size: 13px;
+  line-height: 1.7;
 
-<!-- ABOUT -->
+  text-transform: none;
+}
 
-<section class="experience" id="about">
 
-  <div class="experience-heading">
+/* WORK */
 
-    <span>About / Profile</span>
+.work {
+  max-width: 1280px;
+  margin: auto;
 
-    <h2>
-      Ideas into<br>
-      visuals.
-    </h2>
+  padding: 0 4vw 130px;
+}
 
-  </div>
+.section-head {
+  display: flex;
+  justify-content: space-between;
 
-  <div class="experience-list">
+  border-bottom: 1px solid #bbb;
 
-    <article class="experience-card" onclick="openProfile()">
+  padding-bottom: 12px;
+  margin-bottom: 7px;
 
-      <div class="experience-top">
+  font-size: 11px;
+  text-transform: uppercase;
+}
 
-        <div>
-          <span class="number">PROFILE</span>
-          <h3>ZAID BELIM</h3>
-        </div>
+.section-head span {
+  color: #777;
+}
 
-        <span class="arrow">→</span>
+.projects {
+  position: relative;
+}
 
-      </div>
+.project {
+  min-height: 190px;
 
-    </article>
+  position: relative;
 
-  </div>
+  margin-top: -36px;
 
-</section>
+  padding: 28px 36px;
 
-<!-- EXPERIENCE -->
+  border-radius: 20px;
 
-<section class="experience" id="experience">
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
-  <div class="experience-heading">
+  cursor: pointer;
 
-    <span>Experience / Creative Practice</span>
+  box-shadow:
+    0 5px 0 rgba(0,0,0,.08),
+    0 14px 24px rgba(0,0,0,.08);
 
-    <h2>
-      Skills,<br>
-      tools and craft.
-    </h2>
+  transition: .25s;
+}
 
-  </div>
+.project:first-child {
+  margin-top: 0;
+}
 
+.project:hover {
+  transform:
+    translateY(-15px)
+    scale(1.006);
 
-  <div class="experience-list">
+  z-index: 20;
+}
 
-    <article class="experience-card" onclick="toggleExperience(this)">
+.project-one {
+  background: #f45b3d;
+  transform: rotate(-2deg);
+}
 
-      <div class="experience-top">
+.project-two {
+  background: #c9bdf2;
+  transform: rotate(1.2deg);
+}
 
-        <div>
-          <span class="number">02 YEARS</span>
-          <h3>PREMIERE PRO</h3>
-        </div>
+.project-three {
+  background: #edf052;
+  transform: rotate(-1.3deg);
+}
 
-        <span class="arrow">→</span>
+.number {
+  font-family: "DM Mono", monospace;
+  font-size: 11px;
+}
 
-      </div>
+.project h2 {
+  margin: 0;
 
-<div class="experience-detail">
-  Experienced in creating polished video content with strong pacing and smooth visual flow. Focused on turning raw footage into engaging and professional final edits.
-</div>
+  font-family: Almarai, sans-serif;
 
-    </article>
+  font-size: clamp(34px, 5vw, 68px);
 
+  line-height: .9;
+  letter-spacing: -3px;
 
-    <article class="experience-card" onclick="toggleExperience(this)">
+  text-transform: uppercase;
+}
 
-      <div class="experience-top">
+.project p {
+  margin: 12px 0 0;
 
-        <div>
-          <span class="number">02 YEARS</span>
-          <h3>AFTER EFFECTS</h3>
-        </div>
+  color: rgba(0,0,0,.5);
 
-        <span class="arrow">→</span>
+  font-size: 10px;
+  font-weight: 700;
 
-      </div>
+  text-transform: uppercase;
+}
 
-<div class="experience-detail">
-  Experienced in enhancing videos with dynamic visual elements and creative effects. Comfortable creating smooth motion-based visuals that add impact to the final content.
-</div>
 
-    </article>
+/* EXPERIENCE */
 
+.experience {
+  background: #e9e3d8;
 
-    <article class="experience-card" onclick="toggleExperience(this)">
+  border-top: 1px solid #bbb;
+  border-bottom: 1px solid #bbb;
 
-      <div class="experience-top">
+  padding: 110px 4vw 130px;
+}
 
-        <div>
-          <span class="number">03 YEARS</span>
-          <h3>PHOTOSHOP</h3>
-        </div>
+.experience-heading {
+  max-width: 1280px;
 
-        <span class="arrow">→</span>
+  margin: auto;
+  margin-bottom: 50px;
 
-      </div>
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
 
-<div class="experience-detail">
-  Experienced in creating and refining visual assets for digital and creative projects. Strong focus on composition, visual quality, and attention to detail.
-</div>
+.experience-heading > span {
+  font-size: 11px;
+  font-weight: 700;
 
-    </article>
-     
-     <article class="experience-card" onclick="toggleExperience(this)">
+  text-transform: uppercase;
+}
 
-  <div class="experience-top">
+.experience-heading h2 {
+  margin: 0;
 
-    <div>
-      <span class="number">06 MONTHS</span>
-      <h3>BLENDER</h3>
-    </div>
+  font-family: Almarai, sans-serif;
 
-    <span class="arrow">→</span>
+  font-size: clamp(48px, 8vw, 120px);
 
-  </div>
+  line-height: .88;
+  letter-spacing: -5px;
 
-<div class="experience-detail">
-  Hands-on experience exploring 3D workflows and developing creative visual elements. Able to incorporate basic 3D concepts into broader visual projects.
-</div>
+  text-transform: uppercase;
+}
 
-</article>
+.experience-list {
+  max-width: 1280px;
+  margin: auto;
+}
 
-  </div>
+.experience-card {
+  position: relative;
 
-</section>
+  margin-top: -25px;
 
+  padding: 28px 36px;
 
-<!-- CONTACT -->
+  min-height: 175px;
 
-<footer id="contact">
+  border: 1px solid rgba(0,0,0,.15);
 
-  <div class="footer-main">
+  border-radius: 20px;
 
-    <div>
+  cursor: pointer;
 
-      <small>Let's create</small>
+  box-shadow:
+    0 5px 0 rgba(0,0,0,.08),
+    0 14px 24px rgba(0,0,0,.08);
 
-      <h2>
-        Let's make<br>
-        something rare.
-      </h2>
+  transition: .25s;
+}
 
-    </div>
+.experience-card:first-child {
+  margin-top: 0;
+}
 
+.experience-card:nth-child(1) {
+  background: #80df9b;
+  transform: rotate(1deg);
+}
 
-    <div class="contact">
+.experience-card:nth-child(2) {
+  background: #79c7ef;
+  transform: rotate(-1.5deg);
+}
 
-      <a href="mailto:zaidbelim2005@gmail.com">
-        zaidbelim2005@gmail.com
-      </a>
+.experience-card:nth-child(3) {
+  background: #f1c98b;
+  transform: rotate(1.3deg);
+}
 
-      <a href="https://youtube.com/@zash_vfx" target="_blank">
-        Visit YouTube ↗
-      </a>
+.experience-card:hover {
+  transform: translateY(-10px);
+  z-index: 10;
+}
 
+.experience-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-      <div class="socials">
+.experience-card h3 {
+  margin: 12px 0 0;
 
-        <a href="https://www.instagram.com/zaid.zfx" target="_blank">
-          ◎
-        </a>
+  font-family: Almarai, sans-serif;
 
-        <a href="https://www.linkedin.com/in/zaid-belim-944702369" target="_blank">
-          in
-        </a>
+  font-size: clamp(30px, 5vw, 60px);
 
-        <a href="https://youtube.com/@zash_vfx" target="_blank">
-          ▶
-        </a>
+  line-height: .9;
 
-      </div>
+  text-transform: uppercase;
+}
 
-    </div>
+.arrow {
+  font-size: 25px;
 
-  </div>
+  transition: .3s;
+}
 
+.experience-card.open .arrow {
+  transform: rotate(90deg);
+}
 
-  <div class="footer-bottom">
+.experience-detail {
+  max-height: 0;
 
-    <div>
-      <strong>▣ Profile</strong>
-      <p>Vedio Editor, VFX Artist / CGI Artist</p>
-    </div>
+  overflow: hidden;
 
-    <div>
-      <strong>⚒ Toolkit</strong>
-      <p>Premiere Pro / After Effects / Photoshop / Blender</p>
-    </div>
+  opacity: 0;
 
-    <div>
-      <strong>文 Languages</strong>
-      <p>English, Hindi, Marathi, Urdu</p>
-    </div>
+  border-top: 1px solid rgba(0,0,0,.15);
 
-  </div>
+  margin-top: 0;
 
-</footer>
+  padding-top: 0;
 
-</main>
+  font-family: "Dancing Script", cursive;
 
+  font-size: 30px;
 
-<!-- PROJECT MODAL -->
+  transition:
+    max-height .3s,
+    opacity .3s,
+    margin .3s,
+    padding .3s;
+}
 
-<div class="modal" id="projectModal">
+.experience-card.open .experience-detail {
+  max-height: 100px;
 
-  <div class="modal-box">
+  opacity: 1;
 
-    <div class="modal-header">
+  margin-top: 25px;
 
-      <span id="modalIndex">
-        001 / 003
-      </span>
+  padding-top: 18px;
+}
 
-      <div>
 
-        <button onclick="previousProject()">‹</button>
+/* FOOTER */
 
-        <button onclick="nextProject()">›</button>
+footer {
+  background: #171717;
 
-        <button class="close" onclick="closeProject()">×</button>
+  color: white;
 
-      </div>
+  padding: 80px 4vw;
+}
 
-    </div>
+.footer-main {
+  max-width: 1280px;
+  margin: auto;
 
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 
-    <div class="modal-image">
+  gap: 50px;
 
-  <iframe
-  id="modalVideo"
-  style="display:none;"
-  frameborder="0"
-  allow="autoplay; encrypted-media; picture-in-picture"
-  allowfullscreen>
-</iframe>
+  border-bottom: 1px solid rgba(255,255,255,.2);
 
-  <img id="modalImage" src="" alt="Project">
+  padding-bottom: 60px;
+}
 
-</div>
+.footer-main small {
+  color: #888;
 
+  font-size: 11px;
+  font-weight: 700;
 
-      <div class="modal-info">
+  text-transform: uppercase;
+}
 
-        <small>
-          Project file / <span id="modalFile">001</span>
-        </small>
+.footer-main h2 {
+  margin: 15px 0;
 
-        <h3 id="modalTitle">
-          CREATIVE WORK
-        </h3>
+  font-family: "Instrument Serif", serif;
 
+  font-size: clamp(60px, 8vw, 110px);
 
-        <div class="modal-bottom">
+  font-weight: 400;
 
-          <div>
+  line-height: .85;
+}
 
-            <em>Tools used</em>
+.contact {
+  display: flex;
+  flex-direction: column;
 
-            <strong>
-              Premiere Pro / After Effects / Photoshop / Blender
-            </strong>
+  justify-content: end;
+  align-items: flex-end;
 
-          </div>
+  gap: 18px;
+}
 
-        </div>
+.contact > a:first-child {
+  font-size: 20px;
 
-      </div>
+  border-bottom: 1px solid white;
+}
 
-    </div>
+.contact > a:nth-child(2) {
+  color: #aaa;
 
-  </div>
+  font-size: 11px;
+  font-weight: 700;
 
-</div>
+  text-transform: uppercase;
+}
 
+.socials {
+  display: flex;
+  gap: 8px;
+}
 
-<script src="script.js"></script>
+.socials a {
+  width: 44px;
+  height: 44px;
 
-<!-- PROFILE MODAL -->
+  display: grid;
+  place-items: center;
 
-<div class="modal" id="profileModal">
+  border: 1px solid rgba(255,255,255,.25);
 
-  <div class="modal-box">
+  font-weight: 700;
 
-    <div class="modal-header">
+  transition: .2s;
+}
 
-      <span>PROFILE / ZAID BELIM</span>
+.socials a:hover {
+  background: white;
+  color: #171717;
+}
 
-      <div>
-        <button class="close" onclick="closeProfile()">×</button>
-      </div>
+.footer-bottom {
+  max-width: 1280px;
 
-    </div>
+  margin: auto;
 
-    <div class="modal-info profile-info">
-     
-    <img src="zaid.jpg" alt="Mohammed Zaid Belim" class="profile-photo">
+  padding-top: 40px;
 
-      <small>About / Creative Profile</small>
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
 
-      <h1>Hi, I'm<br>MOHAMMED ZAID BELIM</h1>
+  gap: 30px;
+}
 
-      <div class="profile-bio">
+.footer-bottom strong {
+  font-size: 13px;
+}
 
-        <p>
-          A Video Editor and VFX Artist who loves creating cinematic and creative visuals.
-          I work with video editing, motion graphics, visual effects, and 3D design using
-          tools like Premiere Pro, After Effects, Photoshop, and Blender.
-        </p>
+.footer-bottom p {
+  color: #888;
 
-        <p>
-          Over the years, I've worked on different projects that have helped me grow
-          both creatively and professionally. I'm always learning new skills and trying
-          to improve my work with every project.
-        </p>
+  font-size: 13px;
+}
 
-        <p>
-          My goal is to build my own creative studio and work on bigger projects,
-          including films, commercials, and digital content that people enjoy and remember.
-        </p>
 
-        <p>
-          I enjoy bringing ideas to life and creating visuals that tell a story and leave
-          a lasting impression.
-        </p>
+/* MODAL */
 
-      </div>
+.modal {
+  position: fixed;
 
-    </div>
+  inset: 0;
 
-  </div>
+  z-index: 100;
 
-</div>
-</body>
-</html>
+  display: none;
+
+  place-items: center;
+
+  padding: 25px;
+
+  background: rgba(0,0,0,.55);
+
+  backdrop-filter: blur(8px);
+}
+
+.modal.show {
+  display: grid;
+}
+
+.modal-box {
+  width: min(1120px,100%);
+
+  max-height: calc(100vh - 50px);
+
+  overflow: auto;
+
+  background: #f5f1e9;
+
+  border-radius: 22px;
+
+  box-shadow: 0 35px 100px rgba(0,0,0,.4);
+}
+
+.modal-header {
+  height: 60px;
+
+  padding: 0 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid rgba(0,0,0,.15);
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 11px;
+}
+
+.modal-header button {
+  width: 44px;
+  height: 44px;
+
+  border: 1px solid rgba(0,0,0,.2);
+
+  background: transparent;
+
+  font-size: 25px;
+
+  cursor: pointer;
+}
+
+.modal-header .close {
+  background: #171717;
+  color: white;
+}
+
+.modal-content {
+  min-height: 500px;
+
+  display: grid;
+
+  grid-template-columns: 48% 52%;
+}
+
+.modal-image {
+  min-height: 450px;
+
+  background: #171717;
+
+  display: grid;
+
+  place-items: center;
+}
+
+.modal-image img {
+  width: 100%;
+  height: 100%;
+
+  max-height: 650px;
+
+  object-fit: contain;
+}
+
+.modal-info {
+  padding: 40px;
+
+  display: flex;
+  flex-direction: column;
+
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 35px,
+      rgba(55,48,39,.09) 36px
+    );
+}
+
+.modal-info small {
+  color: #777;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 10px;
+}
+
+.modal-info h3 {
+  margin: 15px 0;
+
+  font-family: "Dancing Script", cursive;
+
+  font-size: 72px;
+
+  line-height: .9;
+}
+
+.modal-bottom {
+  margin-top: auto;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 30px;
+
+  align-items: end;
+}
+
+.modal-bottom > a {
+  width: max-content;
+
+  padding: 15px;
+
+  background: #171717;
+
+  color: white;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+}
+
+.modal-bottom em {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-family: "Dancing Script", cursive;
+
+  font-size: 25px;
+
+  font-style: normal;
+}
+
+.modal-bottom strong {
+  font-size: 10px;
+
+  text-transform: uppercase;
+}
+
+
+/* MOBILE */
+
+@media(max-width:700px) {
+
+#profileModal .profile-photo {
+  width: 70px !important;
+  height: 70px !important;
+  max-width: 70px !important;
+  max-height: 70px !important;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 15px;
+}
+
+  header {
+    padding: 18px 4vw;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .hero h1 {
+    margin: 60px 0;
+
+    letter-spacing: -4px;
+  }
+
+  .intro {
+    grid-template-columns: 1fr;
+  }
+
+  .section-head span {
+    display: none;
+  }
+
+  .project {
+    min-height: 155px;
+
+    margin-top: -27px;
+
+    padding: 22px;
+  }
+
+  .experience {
+    padding: 75px 4vw;
+  }
+
+  .experience-heading {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+  }
+
+  .experience-heading h2 {
+    letter-spacing: -3px;
+  }
+
+  .footer-main {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom {
+    grid-template-columns: 1fr;
+  }
+
+  .contact {
+    align-items: flex-start;
+  }
+
+  .modal-content {
+    display: block;
+  }
+
+  .modal-image {
+    min-height: 300px;
+  }
+
+  .modal-info {
+    min-height: 360px;
+  }
+
+  .modal-bottom {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-info h3 {
+    font-size: 55px;
+  }
+
+}
+
+.profile-info {
+  text-align: center;
+  align-items: center;
+}
+
+.profile-photo {
+  width: 10px;
+  height: 10px;
+  object-fit: cover;
+  border-radius: 1 0%;
+  display: block;
+  margin: 0 auto 10px;
+  border: 1px solid rgba(0,0,0,.15);
+  box-shadow: 0 8px 20px rgba(0,0,0,.12);
+}
+
+.profile-bio {
+  max-width: 800px;
+  margin: 10px auto 0;
+  text-align: left;
+}
+
+.profile-bio p {
+  margin: 0 0 20px;
+  color: #555;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+#profileModal .profile-photo {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 15px;
+
+  clip-path: inset(0 100% 0 0);
+  opacity: 0;
+  filter: blur(8px);
+  transform: scale(0.92);
+}
+
+/* PROFILE IMAGE - DRAW / BUILD ANIMATION */
+
+#profileModal .profile-photo {
+  width: 140px;
+  height: 140px;
+
+  object-fit: cover;
+  border-radius: 50%;
+
+  display: block;
+  margin: 0 auto 20px;
+
+  opacity: 0;
+  transform: scale(0.2);
+
+  clip-path: inset(50% 50% 50% 50% round 50%);
+
+  animation: imageBuild 2.8s cubic-bezier(.16, 1, .3, 1) forwards;
+}
+
+@keyframes imageBuild {
+
+  0% {
+    opacity: 0;
+    transform: scale(0.2);
+    clip-path: inset(50% 50% 50% 50% round 50%);
+    filter: blur(12px);
+  }
+
+  25% {
+    opacity: .3;
+    transform: scale(0.45);
+    clip-path: inset(30% 30% 30% 30% round 50%);
+    filter: blur(8px);
+  }
+
+  55% {
+    opacity: .65;
+    transform: scale(0.75);
+    clip-path: inset(12% 12% 12% 12% round 50%);
+    filter: blur(4px);
+  }
+
+  80% {
+    opacity: .9;
+    transform: scale(0.95);
+    clip-path: inset(3% 3% 3% 3% round 50%);
+    filter: blur(1px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    clip-path: inset(0 0 0 0 round 50%);
+    filter: blur(0);
+  }
+}
+
+/* =================================
+   CINEMATIC NAME ASSEMBLY
+================================= */
+
+.brand strong {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.brand strong .name-letter {
+  display: inline-block;
+  position: relative;
+
+  opacity: 0;
+
+  font-size: 1em;
+
+  animation: letterAssemble 1.8s cubic-bezier(.16, 1, .3, 1) forwards;
+}
+
+
+/* Each letter starts from a different place */
+
+.brand strong .name-letter:nth-child(1) {
+  --x: -70vw;
+  --y: -45vh;
+  --r: -35deg;
+}
+
+.brand strong .name-letter:nth-child(2) {
+  --x: 55vw;
+  --y: -35vh;
+  --r: 25deg;
+}
+
+.brand strong .name-letter:nth-child(3) {
+  --x: -45vw;
+  --y: 40vh;
+  --r: 50deg;
+}
+
+.brand strong .name-letter:nth-child(4) {
+  --x: 70vw;
+  --y: 35vh;
+  --r: -45deg;
+}
+
+.brand strong .name-letter:nth-child(5) {
+  --x: -30vw;
+  --y: -55vh;
+  --r: 70deg;
+}
+
+.brand strong .name-letter:nth-child(6) {
+  --x: 40vw;
+  --y: 55vh;
+  --r: -60deg;
+}
+
+.brand strong .name-letter:nth-child(7) {
+  --x: -65vw;
+  --y: 10vh;
+  --r: 40deg;
+}
+
+.brand strong .name-letter:nth-child(8) {
+  --x: 60vw;
+  --y: -5vh;
+  --r: -30deg;
+}
+
+.brand strong .name-letter:nth-child(9) {
+  --x: -50vw;
+  --y: -25vh;
+  --r: 55deg;
+}
+
+.brand strong .name-letter:nth-child(10) {
+  --x: 45vw;
+  --y: 25vh;
+  --r: -50deg;
+}
+
+.brand strong .name-letter:nth-child(11) {
+  --x: -20vw;
+  --y: 50vh;
+  --r: 35deg;
+}
+
+.brand strong .name-letter:nth-child(12) {
+  --x: 30vw;
+  --y: -50vh;
+  --r: -40deg;
+}
+
+.brand strong .name-letter:nth-child(13) {
+  --x: -55vw;
+  --y: 30vh;
+  --r: 65deg;
+}
+
+.brand strong .name-letter:nth-child(14) {
+  --x: 65vw;
+  --y: -25vh;
+  --r: -65deg;
+}
+
+.brand strong .name-letter:nth-child(15) {
+  --x: -35vw;
+  --y: -10vh;
+  --r: 45deg;
+}
+
+.brand strong .name-letter:nth-child(16) {
+  --x: 50vw;
+  --y: 45vh;
+  --r: -35deg;
+}
+
+.brand strong .name-letter:nth-child(17) {
+  --x: -60vw;
+  --y: -40vh;
+  --r: 30deg;
+}
+
+.brand strong .name-letter:nth-child(18) {
+  --x: 35vw;
+  --y: 40vh;
+  --r: -55deg;
+}
+
+.brand strong .name-letter:nth-child(19) {
+  --x: -40vw;
+  --y: 15vh;
+  --r: 50deg;
+}
+
+@keyframes letterAssemble {
+
+  0% {
+    opacity: 0;
+
+    transform:
+      translate(var(--x), var(--y))
+      rotate(var(--r))
+      scale(5);
+
+    filter: blur(12px);
+  }
+
+  45% {
+    opacity: 1;
+
+    filter: blur(5px);
+  }
+
+  75% {
+    filter: blur(1px);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform:
+      translate(0, 0)
+      rotate(0)
+      scale(1);
+
+    filter: blur(0);
+  }
+}
+
+#modalVideo {
+  width: 100%;
+  height: 100%;
+  max-height: 650px;
+  object-fit: contain;
+  background: #171717;
+}
+
+/* =================================
+   ZEDITS BARREL VIDEO ANIMATION
+================================= */
+
+#modalVideo {
+  transform-origin: center center;
+  backface-visibility: hidden;
+  will-change: transform, opacity;
+}
+
+/* Jab video next/previous ho raha ho */
+#modalVideo.barrel-next {
+  animation: barrelNext 0.7s cubic-bezier(.22,.61,.36,1);
+}
+
+#modalVideo.barrel-prev {
+  animation: barrelPrev 0.7s cubic-bezier(.22,.61,.36,1);
+}
+
+@keyframes barrelNext {
+
+  0% {
+    opacity: 0;
+    transform:
+      perspective(900px)
+      rotateY(90deg)
+      translateX(120px)
+      scale(.88);
+  }
+
+  45% {
+    opacity: .7;
+    transform:
+      perspective(900px)
+      rotateY(25deg)
+      translateX(40px)
+      scale(.95);
+  }
+
+  100% {
+    opacity: 1;
+    transform:
+      perspective(900px)
+      rotateY(0deg)
+      translateX(0)
+      scale(1);
+  }
+}
+
+@keyframes barrelPrev {
+
+  0% {
+    opacity: 0;
+    transform:
+      perspective(900px)
+      rotateY(-90deg)
+      translateX(-120px)
+      scale(.88);
+  }
+
+  45% {
+    opacity: .7;
+    transform:
+      perspective(900px)
+      rotateY(-25deg)
+      translateX(-40px)
+      scale(.95);
+  }
+
+  100% {
+    opacity: 1;
+    transform:
+      perspective(900px)
+      rotateY(0deg)
+      translateX(0)
+      scale(1);
+  }
+}
+
+/* =================================
+   EXPERIENCE TYPEWRITER ANIMATION
+================================= */
+
+.experience-detail {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  border-top: 1px solid rgba(0,0,0,.15);
+  margin-top: 0;
+  padding-top: 0;
+
+  font-family: "Dancing Script", cursive;
+  font-size: 24px;
+  line-height: 1.5;
+
+  transition:
+    max-height .45s ease,
+    opacity .3s ease,
+    margin .45s ease,
+    padding .45s ease;
+}
+
+.experience-card.open .experience-detail {
+  max-height: 180px;
+  opacity: 1;
+  margin-top: 25px;
+  padding-top: 18px;
+}
+
+@media (max-width: 700px) {
+  .experience-card.open .experience-detail {
+    max-height: 500px;
+  }
+}
