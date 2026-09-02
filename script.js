@@ -294,10 +294,57 @@ function previousProject() {
 
 function toggleExperience(card) {
 
-  card.classList.toggle("open");
+  const detail = card.querySelector(".experience-detail");
 
+  if (!detail) return;
+
+  if (card.classList.contains("open")) {
+
+    card.classList.remove("open");
+
+    return;
+  }
+
+  // Close other cards
+  document
+    .querySelectorAll(".experience-card.open")
+    .forEach(function(otherCard) {
+
+      otherCard.classList.remove("open");
+
+    });
+
+  card.classList.add("open");
+
+  // Save original text
+  const fullText = detail.getAttribute("data-text") || detail.textContent.trim();
+
+  detail.setAttribute("data-text", fullText);
+
+  // Clear text
+  detail.textContent = "";
+
+  let index = 0;
+
+  function typeText() {
+
+    if (!card.classList.contains("open")) return;
+
+    if (index < fullText.length) {
+
+      detail.textContent += fullText.charAt(index);
+
+      index++;
+
+      setTimeout(typeText, 25);
+
+    }
+
+  }
+
+  // Start after slide-down begins
+  setTimeout(typeText, 300);
 }
-
 
 /* ===============================
    PROJECT MODAL BACKGROUND
