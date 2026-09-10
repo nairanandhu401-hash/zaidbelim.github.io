@@ -1491,3 +1491,9 @@ footer {
     width: 120px;
   }
 }
+
+#about .experience-card {
+  background: #c9bdf2;
+  color: #000;
+  transform: rotate(1deg);
+}
