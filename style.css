@@ -1885,3 +1885,17 @@ body.brand-ready .brand strong .name-letter {
     filter: blur(0);
   }
 }
+
+#intro-screen .intro-full-name {
+  display: block !important;
+  position: relative !important;
+  z-index: 20 !important;
+
+  color: #ffffff !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+
+  filter: none !important;
+  transform: none !important;
+  animation: none !important;
+}
