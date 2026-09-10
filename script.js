@@ -450,3 +450,17 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 });
+
+/* =========================
+   INTRO SCREEN
+========================= */
+
+window.addEventListener("load", () => {
+
+  const intro = document.getElementById("intro-screen");
+
+  setTimeout(() => {
+    intro.classList.add("hide-intro");
+  }, 3200);
+
+});
