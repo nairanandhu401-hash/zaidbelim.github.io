@@ -1887,108 +1887,131 @@ body.brand-ready .brand strong .name-letter {
 }
 
 /* =========================================
-   REAL CINEMATIC FOG
+   LIQUID LIGHT WAVE — CINEMATIC INTRO
 ========================================= */
 
-#intro-screen {
-  isolation: isolate;
+.liquid-light {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  overflow: hidden;
 }
 
-.intro-fog {
+/* Main flowing light */
+.light-wave {
   position: absolute;
-  pointer-events: none;
-  z-index: 3;
-
-  width: 70vw;
-  height: 35vh;
+  width: 75vw;
+  height: 28vh;
 
   border-radius: 50%;
 
   background:
     radial-gradient(
-      ellipse,
+      ellipse at center,
       rgba(255,255,255,0.22) 0%,
-      rgba(255,255,255,0.12) 25%,
-      rgba(220,230,240,0.06) 45%,
-      transparent 72%
+      rgba(255,255,255,0.13) 22%,
+      rgba(210,225,240,0.07) 42%,
+      transparent 70%
     );
 
-  filter: blur(30px);
-  opacity: 0.9;
-
+  filter: blur(28px);
   mix-blend-mode: screen;
 }
 
-/* LEFT FOG */
-.fog-one {
-  left: -25vw;
-  bottom: 5vh;
+/* First wave */
+.wave-one {
+  left: -30vw;
+  top: 35%;
 
-  transform: rotate(-8deg) scale(1.3);
+  transform: rotate(-12deg) scale(1.2);
 
-  animation: fogLeft 9s ease-in-out infinite alternate;
+  animation:
+    liquidWaveOne 8s cubic-bezier(.45,0,.55,1) infinite alternate;
 }
 
-/* RIGHT FOG */
-.fog-two {
-  right: -25vw;
-  top: 10vh;
+/* Second wave */
+.wave-two {
+  right: -35vw;
+  top: 48%;
 
-  transform: rotate(12deg) scale(1.4);
+  transform: rotate(10deg) scale(1.4);
 
-  animation: fogRight 11s ease-in-out infinite alternate;
+  opacity: 0.7;
+
+  animation:
+    liquidWaveTwo 10s cubic-bezier(.45,0,.55,1) infinite alternate;
 }
 
-/* CENTER LOW FOG */
-.fog-three {
-  left: 15vw;
-  bottom: -15vh;
+/* Flow from left → right */
+@keyframes liquidWaveOne {
 
-  width: 70vw;
-  height: 30vh;
-
-  transform: scale(1.5);
-
-  animation: fogCenter 13s ease-in-out infinite alternate;
-}
-
-@keyframes fogLeft {
   0% {
-    transform: translateX(-5vw) rotate(-8deg) scale(1.3);
-    opacity: 0.45;
+    transform:
+      translateX(-10vw)
+      translateY(8vh)
+      rotate(-12deg)
+      scale(1.1);
+
+    opacity: 0.15;
+  }
+
+  50% {
+    transform:
+      translateX(25vw)
+      translateY(-4vh)
+      rotate(-4deg)
+      scale(1.45);
+
+    opacity: 0.8;
   }
 
   100% {
-    transform: translateX(22vw) rotate(4deg) scale(1.7);
-    opacity: 0.9;
-  }
-}
+    transform:
+      translateX(65vw)
+      translateY(7vh)
+      rotate(8deg)
+      scale(1.7);
 
-@keyframes fogRight {
-  0% {
-    transform: translateX(8vw) rotate(12deg) scale(1.4);
-    opacity: 0.35;
-  }
-
-  100% {
-    transform: translateX(-25vw) rotate(-8deg) scale(1.8);
-    opacity: 0.85;
-  }
-}
-
-@keyframes fogCenter {
-  0% {
-    transform: translateX(-15vw) scale(1.4);
     opacity: 0.25;
   }
+}
+
+/* Flow from right → left */
+@keyframes liquidWaveTwo {
+
+  0% {
+    transform:
+      translateX(15vw)
+      translateY(-6vh)
+      rotate(10deg)
+      scale(1.2);
+
+    opacity: 0.1;
+  }
+
+  50% {
+    transform:
+      translateX(-20vw)
+      translateY(5vh)
+      rotate(2deg)
+      scale(1.5);
+
+    opacity: 0.65;
+  }
 
   100% {
-    transform: translateX(15vw) scale(1.9);
-    opacity: 0.7;
+    transform:
+      translateX(-60vw)
+      translateY(-4vh)
+      rotate(-10deg)
+      scale(1.8);
+
+    opacity: 0.2;
   }
 }
 
-/* CONTENT ALWAYS ABOVE FOG */
+/* Keep text above the light */
 #intro-screen .intro-content {
   position: relative;
   z-index: 10;
