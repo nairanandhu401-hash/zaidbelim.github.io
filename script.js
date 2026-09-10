@@ -466,7 +466,7 @@ window.addEventListener("load", () => {
     opening, then reveals automatically.
   */
 
-  const INTRO_DURATION = 2850;
+  const INTRO_DURATION = 4800;
 
   setTimeout(() => {
     intro.classList.add("hide-intro");
