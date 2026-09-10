@@ -1289,10 +1289,8 @@ footer {
 
   letter-spacing: clamp(1px, 0.6vw, 7px);
 
-  white-space: normal;
-  max-width: 100%;
-  overflow-wrap: break-word;
-
+  white-space: nowrap;
+  
   opacity: 0;
   transform: scaleX(0.86) translateY(25px);
   filter: blur(8px);
