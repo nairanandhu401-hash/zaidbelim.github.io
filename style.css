@@ -1968,3 +1968,110 @@ body.brand-ready .brand strong .name-letter {
   position: relative;
   z-index: 5;
 }
+
+/* =========================================
+   VISIBLE CINEMATIC FOG
+========================================= */
+
+#intro-screen {
+  isolation: isolate;
+}
+
+#intro-screen::before {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  z-index: 1;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      ellipse at 15% 65%,
+      rgba(255,255,255,0.16) 0%,
+      rgba(255,255,255,0.08) 18%,
+      transparent 45%
+    ),
+    radial-gradient(
+      ellipse at 85% 35%,
+      rgba(220,230,240,0.13) 0%,
+      rgba(220,230,240,0.06) 20%,
+      transparent 48%
+    ),
+    radial-gradient(
+      ellipse at 50% 100%,
+      rgba(255,255,255,0.12) 0%,
+      transparent 42%
+    );
+
+  filter: blur(55px);
+  opacity: 0;
+
+  animation: fogMove 8s ease-in-out infinite alternate;
+}
+
+#intro-screen::after {
+  content: "";
+  position: absolute;
+  inset: -30%;
+  z-index: 2;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      ellipse at 30% 40%,
+      rgba(255,255,255,0.10),
+      transparent 38%
+    ),
+    radial-gradient(
+      ellipse at 70% 70%,
+      rgba(200,215,230,0.09),
+      transparent 40%
+    );
+
+  filter: blur(80px);
+  opacity: 0;
+
+  animation: fogMove2 11s ease-in-out infinite alternate;
+}
+
+#intro-screen .intro-content {
+  position: relative;
+  z-index: 10;
+}
+
+@keyframes fogMove {
+  0% {
+    opacity: 0;
+    transform: translateX(-12%) translateY(5%) scale(1);
+  }
+
+  35% {
+    opacity: 0.8;
+  }
+
+  70% {
+    opacity: 1;
+    transform: translateX(8%) translateY(-3%) scale(1.08);
+  }
+
+  100% {
+    opacity: 0.7;
+    transform: translateX(-3%) translateY(4%) scale(1.04);
+  }
+}
+
+@keyframes fogMove2 {
+  0% {
+    opacity: 0;
+    transform: translateX(12%) scale(1.1);
+  }
+
+  40% {
+    opacity: 0.55;
+  }
+
+  100% {
+    opacity: 0.9;
+    transform: translateX(-10%) scale(1.2);
+  }
+}
