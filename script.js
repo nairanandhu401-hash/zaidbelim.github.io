@@ -451,16 +451,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
-/* =========================
-   INTRO SCREEN
-========================= */
+/* =========================================
+   CINEMATIC INTRO
+========================================= */
 
 window.addEventListener("load", () => {
 
   const intro = document.getElementById("intro-screen");
 
+  if (!intro) return;
+
+  /*
+    Portfolio stays hidden for a short cinematic
+    opening, then reveals automatically.
+  */
+
+  const INTRO_DURATION = 2850;
+
   setTimeout(() => {
     intro.classList.add("hide-intro");
-  }, 3200);
+
+    // Completely remove intro from interaction
+    setTimeout(() => {
+      intro.style.display = "none";
+    }, 950);
+
+  }, INTRO_DURATION);
 
 });
