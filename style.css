@@ -1188,3 +1188,120 @@ footer {
     max-height: 500px;
   }
 }
+
+/* =========================
+   CINEMATIC INTRO
+========================= */
+
+#intro-screen {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  background: #000;
+  z-index: 99999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 1;
+  visibility: visible;
+
+  transition:
+    opacity 1s ease,
+    visibility 1s ease;
+}
+
+.intro-content {
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+.intro-small {
+  font-family: "DM Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 5px;
+  opacity: 0;
+
+  transform: translateY(15px);
+
+  animation: introSmall 0.8s ease forwards;
+  animation-delay: 0.2s;
+}
+
+.intro-name {
+  margin-top: 18px;
+
+  font-family: "Inter", sans-serif;
+  font-size: clamp(28px, 5vw, 70px);
+  font-weight: 800;
+  letter-spacing: 4px;
+
+  opacity: 0;
+  transform: translateY(30px);
+
+  animation: introName 1s cubic-bezier(.22,1,.36,1) forwards;
+  animation-delay: 0.7s;
+}
+
+.intro-line {
+  width: 0;
+  height: 1px;
+  background: #fff;
+
+  margin: 24px auto 18px;
+
+  animation: introLine 1s ease forwards;
+  animation-delay: 1.5s;
+}
+
+.intro-role {
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 3px;
+
+  opacity: 0;
+
+  animation: introRole 0.8s ease forwards;
+  animation-delay: 1.8s;
+}
+
+
+/* INTRO ANIMATIONS */
+
+@keyframes introSmall {
+  to {
+    opacity: 0.65;
+    transform: translateY(0);
+  }
+}
+
+@keyframes introName {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes introLine {
+  to {
+    width: 120px;
+  }
+}
+
+@keyframes introRole {
+  to {
+    opacity: 0.55;
+  }
+}
+
+
+/* INTRO EXIT */
+
+#intro-screen.hide-intro {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
