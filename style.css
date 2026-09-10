@@ -1274,7 +1274,7 @@ footer {
   animation:
     introWelcome 0.8s cubic-bezier(.22,1,.36,1) forwards;
 
-  animation-delay: 0.25s;
+  animation-delay: 0.2s;
 }
 
 /* NAME */
@@ -1283,13 +1283,15 @@ footer {
   margin-top: 22px;
 
   font-family: "Inter", sans-serif;
-  font-size: clamp(38px, 8vw, 105px);
+  font-size: clamp(32px, 7vw, 90px);
   font-weight: 800;
   line-height: 0.95;
 
-  letter-spacing: clamp(2px, 0.8vw, 10px);
+  letter-spacing: clamp(1px, 0.6vw, 7px);
 
-  white-space: nowrap;
+  white-space: normal;
+  max-width: 100%;
+  overflow-wrap: break-word;
 
   opacity: 0;
   transform: scaleX(0.86) translateY(25px);
@@ -1298,7 +1300,7 @@ footer {
   animation:
     introNameReveal 1.25s cubic-bezier(.16,1,.3,1) forwards;
 
-  animation-delay: 0.65s;
+  animation-delay: 1.1s;
 }
 
 /* LINE */
@@ -1316,7 +1318,7 @@ footer {
   animation:
     introLineReveal 0.9s cubic-bezier(.77,0,.18,1) forwards;
 
-  animation-delay: 1.55s;
+  animation-delay: 2.5s;
 }
 
 .intro-line::after {
@@ -1333,7 +1335,7 @@ footer {
   opacity: 0;
 
   animation: introDot 0.3s ease forwards;
-  animation-delay: 2.15s;
+  animation-delay: 3.1s;
 }
 
 /* ROLE */
@@ -1350,7 +1352,7 @@ footer {
   animation:
     introRoleReveal 0.8s cubic-bezier(.22,1,.36,1) forwards;
 
-  animation-delay: 1.8s;
+  animation-delay: 2.8s;
 }
 
 /* =========================================
