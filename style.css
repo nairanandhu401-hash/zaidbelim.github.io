@@ -1400,6 +1400,11 @@ body.brand-ready .brand strong .name-letter {
   opacity: 1;
 }
 
+.intro-z,
+.intro-rest {
+  position: relative;
+  z-index: 2;
+}
 /* =========================================
    ELECTRIC LIGHTNING — Z IMPACT
 ========================================= */
@@ -1435,7 +1440,7 @@ body.brand-ready .brand strong .name-letter {
   filter: blur(4px);
 
   pointer-events: none;
-  z-index: -1;
+  z-index: 0;
 
   opacity: 0;
 
@@ -1473,7 +1478,7 @@ body.brand-ready .brand strong .name-letter {
   opacity: 0;
 
   pointer-events: none;
-  z-index: -1;
+  z-index: 0;
 
   animation: lightningStrike 0.32s cubic-bezier(.2,.8,.2,1) forwards;
   animation-delay: 0.82s;
@@ -1824,4 +1829,58 @@ body.brand-ready .brand strong .name-letter {
     filter: blur(0);
   }
 
+}
+
+/* =========================================
+   FULL NAME — FIX
+========================================= */
+
+#intro-screen .intro-full-name {
+  position: relative;
+  z-index: 10;
+
+  display: block;
+
+  margin-top: 18px;
+
+  color: #ffffff !important;
+
+  font-family: "DM Mono", monospace;
+  font-size: clamp(10px, 1.2vw, 13px);
+  font-weight: 500;
+
+  letter-spacing: clamp(2px, 0.5vw, 6px);
+
+  opacity: 0;
+  visibility: visible;
+
+  transform: translateY(15px);
+  filter: blur(7px);
+
+  animation: introFullNameReveal 1s
+    cubic-bezier(.16,1,.3,1)
+    forwards;
+
+  animation-delay: 1.95s;
+}
+
+@keyframes introFullNameReveal {
+
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+    filter: blur(7px);
+  }
+
+  55% {
+    opacity: 1;
+    transform: translateY(-2px);
+    filter: blur(1px);
+  }
+
+  100% {
+    opacity: 0.72;
+    transform: translateY(0);
+    filter: blur(0);
+  }
 }
