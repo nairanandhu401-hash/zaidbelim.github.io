@@ -1497,3 +1497,8 @@ footer {
   color: #000;
   transform: rotate(1deg);
 }
+
+#about .experience-card:hover {
+  transform: rotate(0deg)
+  translateY(-8px);
+}
