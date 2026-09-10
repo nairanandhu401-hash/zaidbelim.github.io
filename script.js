@@ -419,31 +419,28 @@ function closeProfile() {
 
 document.addEventListener("DOMContentLoaded", function () {
 
-  const name =
-    document.querySelector(".brand strong");
+  const name = document.querySelector(".brand strong");
 
   if (!name) return;
 
-  const text =
-    name.textContent;
+  const text = name.textContent;
 
   name.innerHTML = "";
 
   [...text].forEach(function(letter, index) {
 
-    const span =
-      document.createElement("span");
+    const span = document.createElement("span");
 
-    span.className =
-      "name-letter";
+    span.className = "name-letter";
 
     span.textContent =
       letter === " "
         ? "\u00A0"
         : letter;
 
+    // Animation starts AFTER intro finishes
     span.style.animationDelay =
-      (index * 0.06) + "s"; 
+      (4.8 + index * 0.06) + "s";
 
     name.appendChild(span);
 
