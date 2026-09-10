@@ -8,8 +8,8 @@ html {
 
 body {
   margin: 0;
-  background: #f5f1e9;
-  color: #171717;
+  background: #000;
+  color: #fff;
   font-family: Inter, Arial, sans-serif;
 }
 
@@ -47,7 +47,7 @@ header {
 
 .brand span {
   font-size: 11px;
-  color: #777;
+  color: #aaa;
   margin-top: 3px;
 }
 
@@ -92,7 +92,7 @@ nav a:first-child {
 .location {
   text-align: right;
 
-  color: #777;
+  color: #aaa;
 
   font-size: 11px;
   text-transform: uppercase;
@@ -129,7 +129,7 @@ nav a:first-child {
 .intro p {
   margin: 0;
 
-  color: #777;
+  color: #aaa;
 
   font-size: 13px;
   line-height: 1.7;
@@ -161,7 +161,7 @@ nav a:first-child {
 }
 
 .section-head span {
-  color: #777;
+  color: #aaa;
 }
 
 .projects {
@@ -252,10 +252,10 @@ nav a:first-child {
 /* EXPERIENCE */
 
 .experience {
-  background: #e9e3d8;
-
-  border-top: 1px solid #bbb;
-  border-bottom: 1px solid #bbb;
+  background: #000;
+  color: #fff;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
 
   padding: 110px 4vw 130px;
 }
@@ -553,8 +553,8 @@ footer {
 
   overflow: auto;
 
-  background: #f5f1e9;
-
+  background: #000;
+  color: #fff;
   border-radius: 22px;
 
   box-shadow: 0 35px 100px rgba(0,0,0,.4);
@@ -632,7 +632,7 @@ footer {
       to bottom,
       transparent 0,
       transparent 35px,
-      rgba(55,48,39,.09) 36px
+      rgba(225,225,225,.06) 36px
     );
 }
 
@@ -1189,17 +1189,18 @@ footer {
   }
 }
 
-/* =========================
-   CINEMATIC INTRO
-========================= */
+/* =========================================
+   ZAID BELIM — CINEMATIC INTRO
+========================================= */
 
 #intro-screen {
   position: fixed;
   inset: 0;
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
   background: #000;
   z-index: 99999;
+  overflow: hidden;
 
   display: flex;
   align-items: center;
@@ -1207,101 +1208,279 @@ footer {
 
   opacity: 1;
   visibility: visible;
+  pointer-events: all;
 
   transition:
-    opacity 1s ease,
-    visibility 1s ease;
+    opacity 0.9s cubic-bezier(.77,0,.18,1),
+    visibility 0.9s;
 }
 
-.intro-content {
-  text-align: center;
-  color: #fff;
-  overflow: hidden;
+/* subtle cinematic texture */
+#intro-screen::before {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  pointer-events: none;
+
+  background-image:
+    radial-gradient(
+      circle at center,
+      rgba(255,255,255,0.055) 0,
+      rgba(255,255,255,0.018) 20%,
+      transparent 55%
+    );
+
+  animation: introAtmosphere 5s ease-in-out infinite alternate;
 }
+
+/* fine grain */
+#intro-screen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  opacity: 0.08;
+
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E");
+
+  mix-blend-mode: screen;
+}
+
+/* content */
+
+.intro-content {
+  position: relative;
+  z-index: 2;
+
+  width: min(90%, 1100px);
+  text-align: center;
+
+  color: #fff;
+}
+
+/* WELCOME */
 
 .intro-small {
   font-family: "DM Mono", monospace;
-  font-size: 11px;
-  letter-spacing: 5px;
+  font-size: 10px;
+  letter-spacing: 7px;
+  text-transform: uppercase;
+
   opacity: 0;
+  transform: translateY(18px);
 
-  transform: translateY(15px);
+  animation:
+    introWelcome 0.8s cubic-bezier(.22,1,.36,1) forwards;
 
-  animation: introSmall 0.8s ease forwards;
-  animation-delay: 0.2s;
+  animation-delay: 0.25s;
 }
+
+/* NAME */
 
 .intro-name {
-  margin-top: 18px;
+  margin-top: 22px;
 
   font-family: "Inter", sans-serif;
-  font-size: clamp(28px, 5vw, 70px);
+  font-size: clamp(38px, 8vw, 105px);
   font-weight: 800;
-  letter-spacing: 4px;
+  line-height: 0.95;
+
+  letter-spacing: clamp(2px, 0.8vw, 10px);
+
+  white-space: nowrap;
 
   opacity: 0;
-  transform: translateY(30px);
+  transform: scaleX(0.86) translateY(25px);
+  filter: blur(8px);
 
-  animation: introName 1s cubic-bezier(.22,1,.36,1) forwards;
-  animation-delay: 0.7s;
+  animation:
+    introNameReveal 1.25s cubic-bezier(.16,1,.3,1) forwards;
+
+  animation-delay: 0.65s;
 }
+
+/* LINE */
 
 .intro-line {
+  position: relative;
+
   width: 0;
   height: 1px;
-  background: #fff;
 
-  margin: 24px auto 18px;
+  margin: 30px auto 20px;
 
-  animation: introLine 1s ease forwards;
-  animation-delay: 1.5s;
+  background: rgba(255,255,255,0.85);
+
+  animation:
+    introLineReveal 0.9s cubic-bezier(.77,0,.18,1) forwards;
+
+  animation-delay: 1.55s;
 }
+
+.intro-line::after {
+  content: "";
+
+  position: absolute;
+  right: 0;
+  top: -2px;
+
+  width: 4px;
+  height: 5px;
+
+  background: #fff;
+  opacity: 0;
+
+  animation: introDot 0.3s ease forwards;
+  animation-delay: 2.15s;
+}
+
+/* ROLE */
 
 .intro-role {
   font-family: "DM Mono", monospace;
-  font-size: 10px;
-  letter-spacing: 3px;
+  font-size: clamp(8px, 1vw, 11px);
+
+  letter-spacing: clamp(2px, 0.45vw, 5px);
 
   opacity: 0;
+  transform: translateY(10px);
 
-  animation: introRole 0.8s ease forwards;
+  animation:
+    introRoleReveal 0.8s cubic-bezier(.22,1,.36,1) forwards;
+
   animation-delay: 1.8s;
 }
 
-
-/* INTRO ANIMATIONS */
-
-@keyframes introSmall {
-  to {
-    opacity: 0.65;
-    transform: translateY(0);
-  }
-}
-
-@keyframes introName {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes introLine {
-  to {
-    width: 120px;
-  }
-}
-
-@keyframes introRole {
-  to {
-    opacity: 0.55;
-  }
-}
-
-
-/* INTRO EXIT */
+/* =========================================
+   EXIT CURTAIN
+========================================= */
 
 #intro-screen.hide-intro {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+}
+
+/* cinematic horizontal light sweep before exit */
+
+#intro-screen.hide-intro .intro-content {
+  transform: translateY(-15px) scale(1.02);
+  opacity: 0;
+  transition:
+    transform 0.55s cubic-bezier(.77,0,.18,1),
+    opacity 0.45s ease;
+}
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes introAtmosphere {
+  from {
+    transform: translate3d(-2%, -1%, 0) scale(1);
+  }
+
+  to {
+    transform: translate3d(2%, 1%, 0) scale(1.08);
+  }
+}
+
+@keyframes introWelcome {
+  to {
+    opacity: 0.55;
+    transform: translateY(0);
+  }
+}
+
+@keyframes introNameReveal {
+  0% {
+    opacity: 0;
+    transform: scaleX(0.86) translateY(25px);
+    filter: blur(8px);
+  }
+
+  60% {
+    opacity: 1;
+    filter: blur(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scaleX(1) translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes introLineReveal {
+  to {
+    width: min(180px, 30vw);
+  }
+}
+
+@keyframes introDot {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes introRoleReveal {
+  to {
+    opacity: 0.48;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .intro-name {
+    font-size: clamp(30px, 10vw, 52px);
+    letter-spacing: 3px;
+  }
+
+  .intro-small {
+    letter-spacing: 5px;
+  }
+
+  .intro-role {
+    letter-spacing: 2px;
+    line-height: 1.8;
+  }
+
+  .intro-line {
+    margin-top: 25px;
+    margin-bottom: 17px;
+  }
+}
+
+/* accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+
+  #intro-screen,
+  #intro-screen::before,
+  .intro-small,
+  .intro-name,
+  .intro-line,
+  .intro-role {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .intro-small,
+  .intro-name,
+  .intro-role {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+
+  .intro-line {
+    width: 120px;
+  }
 }
