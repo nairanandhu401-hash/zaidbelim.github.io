@@ -321,9 +321,9 @@ nav a:first-child {
   margin-top: 0;
 }
 
-.experience-card:nth-child(4) {
-  background: #b8a1e8;
-  transform: rotate(-1deg);
+.experience-card:nth-child(1) {
+  background: #80df9b;
+  transform: rotate(1deg);
 }
 
 .experience-card:nth-child(2) {
@@ -334,6 +334,11 @@ nav a:first-child {
 .experience-card:nth-child(3) {
   background: #f1c98b;
   transform: rotate(1.3deg);
+}
+
+.experience-card:nth-child(4) {
+  background: #b8a1e8;
+  transform: rotate(-1deg);
 }
 
 .experience-card:hover {
