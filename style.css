@@ -343,6 +343,12 @@ nav a:first-child {
   transform: rotate(-1deg);
 }
 
+/* Hover - card becomes straight */
+#experience .experience-card:hover {
+  transform: rotate(0deg)
+translateY(-8px)
+}
+
 .experience-card:hover {
   transform: translateY(-10px);
   z-index: 10;
