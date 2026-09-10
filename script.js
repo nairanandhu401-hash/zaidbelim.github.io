@@ -460,41 +460,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
 window.addEventListener("load", () => {
 
-  const intro =
-    document.getElementById("intro-screen");
+  const intro = document.getElementById("intro-screen");
 
   if (!intro) return;
 
   /*
-    Let the Z → ZAID BELIM animation
-    finish before the portfolio appears.
+    Portfolio stays hidden for a short cinematic
+    opening, then reveals automatically.
   */
 
   const INTRO_DURATION = 4800;
 
   setTimeout(() => {
-
-    /*
-      Start the header name animation
-      exactly when the intro begins to leave.
-    */
-
-    document.body.classList.add("brand-ready");
-
-    /*
-      Fade out cinematic intro
-    */
-
     intro.classList.add("hide-intro");
 
-    /*
-      Remove intro completely after fade
-    */
-
+    // Completely remove intro from interaction
     setTimeout(() => {
-
       intro.style.display = "none";
-
     }, 950);
 
   }, INTRO_DURATION);
